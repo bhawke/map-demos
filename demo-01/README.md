@@ -1,10 +1,12 @@
 ## map demo 01
-* leaflet map
-* solr layer
+Map that demonstrates basic leaflet map with 2 base map layers and 1 feature layer from solr.
+
+#### third party dependencies
+* leaflet
 * jquery
 
-## browsers tested
+#### working in browsers
 * ie8
 * firefox 24
-* latest chrome
+* chrome 38
 
