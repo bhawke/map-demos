@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+
+</head>
+<body>
+
+    <h1>Test works</h1>
+
+<script src="components/jquery/dist/jquery.min.js"></script>
+<script>
+
+    var leaflet = function(result) {
+        alert('got result');
+    }
+
+    $(document).ready(function(){
+
+        $.ajax({
+            'url': 'http://cloudfortressinc.com:8983/solr/collection1/select',
+            'data': {'wt':'json', 'q':'', 'fl':'name,store'},
+            'success': function(data) {
+                alert('it worked');
+            },
+            'dataType': 'jsonp',
+            'jsonp': 'json.wrf'
+        });
+
+        //$.getJSON("http://cloudfortressinc.com:8983/solr/collection1/select?wt=json&indent=true&fl=name,store&q=*:*&callback=?", leaflet);
+
+    });
+</script>
+</body>
+</html>
