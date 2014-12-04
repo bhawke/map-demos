@@ -1,18 +1,12 @@
-## Map Demos
-Demo's of maps using open source javascript map libraries with a variety of data sources.
+## AKG Web Map prototypes
+Prototypes are located in demo-XX folders.  Each is meant to show unique functionality that can be integrated/tested piecemeal.
 
-### Demo Site:
-http://bhawke.github.io/map-demos/
+| Demo          | Description                                                      | Browsers Compatibility  |
+| ------------- | ---------------------------------------------------------------- | ----------------------- |
+| demo-01       | basic map with solr feature layer                                | ie8, ff24               |
+| demo-02       | esri base and feature layer                                      | ie8, ff24               |
+| demo-03       | Map in iframe with dynamic solr params and zoom to marker bounds | ie8, ff24               |
+| demo-04       | Same as demo 03 but with KML layer                               | ie8 - BROKEN, ff24      |
 
-### Download (no build required and contains only html, js, and css)
-https://github.com/bhawke/map-demos/archive/gh-pages.zip
-
-### Dev requirements
-* bower
-
-### Pushing new demo site to gh-pages
-* cd empty directory
-* run: ../map-demos/scripts/gp.sh
-
-### Notes
-* If you just want the final static source, change to the gh-pages branch
+### Workbench
+Miscellaneous area to prototype maps, style, framework integration

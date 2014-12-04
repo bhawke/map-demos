@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+</head>
+<body>
+    <h5>Demo 04 - Same as demo 04 with KML Layer</h5>
+
+    <a href="javascript:applyFilter();">Apply Solr Filter</a><br>
+    <a href="javascript:clearFilter();">Clear Solr Filter</a>
+
+    <iframe id="mapframe" frameborder="0" height="600" src="map.html?wt=json&fl=name,store&q=*:*" width="100%"></iframe>
+
+    <script>
+        var applyFilter = function() {
+            document.getElementById("mapframe").src = 'map.html?wt=json&fl=name,store&q=drive';
+        }
+        var clearFilter = function() {
+            document.getElementById("mapframe").src = 'map.html?wt=json&fl=name,store&q=*:*';
+        }
+    </script>
+</body>
+</html>
