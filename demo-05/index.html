@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="components/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="components/leaflet-styledlayercontrol/css/styledLayerControl.css" />
+    <link rel="stylesheet" href="app.css"/>
+
+</head>
+<body>
+
+    <h5>Demo 05 - Grouped layers for functional areas</h5>
+
+    <div id="map"></div>
+
+<script src="components/jquery/dist/jquery.min.js"></script>
+<script src="components/leaflet/dist/leaflet.js"></script>
+<script>
+    /* polyfill ie8 support - still not working */
+    if (!Array.prototype.indexOf) {
+        Array.prototype.indexOf = function (elt) {
+            var len = this.length >>> 0;
+            var from = Number(arguments[1]) || 0;
+            from = (from < 0) ? Math.ceil(from) : Math.floor(from);
+            if (from < 0) from += len;
+
+            for (; from < len; from++) {
+                if (from in this && this[from] === elt) return from;
+            }
+            return -1;
+        };
+    }
+
+    if (!document.getElementsByClassName) {
+        var indexOf = [].indexOf || function(prop) {
+                    for (var i = 0; i < this.length; i++) {
+                        if (this[i] === prop) return i;
+                    }
+                    return -1;
+                };
+        getElementsByClassName = function(className,context) {
+            var elems = document.querySelectorAll ? context.querySelectorAll("." + className) : (function() {
+                var all = context.getElementsByTagName("*"),
+                        elements = [],
+                        i = 0;
+                for (; i < all.length; i++) {
+                    if (all[i].className && (" " + all[i].className + " ").indexOf(" " + className + " ") > -1 && indexOf.call(elements,all[i]) === -1) elements.push(all[i]);
+                }
+                return elements;
+            })();
+            return elems;
+        };
+        document.getElementsByClassName = function(className) {
+            return getElementsByClassName(className,document);
+        };
+        Element.prototype.getElementsByClassName = function(className) {
+            return getElementsByClassName(className,this);
+        };
+    }
+</script>
+<script src="components/leaflet-styledlayercontrol/src/styledLayerControl.js"></script>
+<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.3/esri-leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
