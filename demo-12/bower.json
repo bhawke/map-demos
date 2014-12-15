@@ -1,0 +1,22 @@
+{
+  "name": "demo-12",
+  "version": "0.0.0",
+  "authors": [
+    "Rob Beers <rbeers@blackhawkenterprise.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "~0.7.3",
+    "jquery": "~1.11.1",
+    "leaflet-spin": "makinacorpus/Leaflet.Spin",
+    "spin.js": "~2.0.1"
+  }
+}
