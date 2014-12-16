@@ -72,7 +72,7 @@ $(document).ready(function(){
         else
             selectClass = 'fa fa-check';
 
-        if (active) {s
+        if (active) {
             /* the zindex may come in handy if we want to pass in an opaque layer */
             layer
                 .setZIndex(zIndex)
