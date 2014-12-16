@@ -1,4 +1,30 @@
-var map = L.map('map').setView([37.8, -96], 4);
+
+// the actually data we are going to look at
+var productCountData = {
+    'AFG':100,
+    'GBR':250,
+    'EGY':999,
+    'IRQ':680,
+    'NIC':320
+};
+
+// our new country geoJSON object
+var countryData = {
+    "type": "FeatureCollection", "features": []
+};
+
+// loop through countryPolygons and create proper GEOJSON object
+for (var countryCode in countryPolygons) {
+    var country = countryPolygons[countryCode].features[0];
+
+    if (productCountData[countryCode] && productCountData[countryCode] !== null) {
+        country.properties.productCount = productCountData[countryCode];
+    }
+
+    countryData.features.push(country);
+}
+
+var map = L.map('map').setView([0, 0], 2);
 
 L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
     maxZoom: 18,
@@ -9,7 +35,7 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
-// control that shows state info on hover
+// control that shows country info on hover
 var info = L.control();
 
 info.onAdd = function (map) {
@@ -19,15 +45,19 @@ info.onAdd = function (map) {
 };
 
 info.update = function (props) {
-    this._div.innerHTML = '<h4>US Population Density</h4>' +  (props ?
-    '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-        : 'Hover over a state');
+    var prodCount = 0;
+    if (props && props.productCount && props.productCount !== null)
+        prodCount = props.productCount;
+
+    this._div.innerHTML = '<h4>Available Products</h4>' +  (props ?
+    '<b>' + props.name + '</b><br />' + prodCount + ' products'
+        : 'Hover over a country');
 };
 
 info.addTo(map);
 
 
-// get color depending on population density value
+// get color depending on population productCount value
 function getColor(d) {
     return d > 1000 ? '#800026' :
         d > 500  ? '#BD0026' :
@@ -46,7 +76,7 @@ function style(feature) {
         color: 'white',
         dashArray: '3',
         fillOpacity: 0.7,
-        fillColor: getColor(feature.properties.density)
+        fillColor: getColor(feature.properties.productCount)
     };
 }
 
@@ -86,7 +116,7 @@ function onEachFeature(feature, layer) {
     });
 }
 
-geojson = L.geoJson(statesData, {
+geojson = L.geoJson(countryData, {
     style: style,
     onEachFeature: onEachFeature
 }).addTo(map);
