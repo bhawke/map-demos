@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#e51c23">
+  <meta name="theme-color" content="#e51c23">
+  <meta name="msapplication-TileColor" content="#e51c23">
+  <title>polymer map</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <link rel="stylesheet" href="styles/main.css" shim-shadowdom>
+
+
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="elements/elements.vulcanized.html">
+</head>
+
+<body unresolved fullbleed>
+
+<template id="t" is="auto-binding">
+
+  <material-search id="search" narrow="{{narrow}}" keywords="{{searchKeywords}}"
+                   previousSearches="{{previousSearches}}"></material-search>
+
+  <core-ajax auto
+             url="data/products.json"
+             params="{{ {'wt':'json', 'q': (searchKeywords || '*:*')} }}"
+             handleAs="json"
+             response="{{productResult}}"></core-ajax>
+
+  <core-animated-pages fit id="pages" selected="{{selectedPage}}" on-core-animated-pages-transition-end="{{transitionend}}" transitions="cross-fade hero-transition">
+
+    <core-drawer-panel fit id="drawerPanel" narrow="{{narrow}}" >
+
+      <core-header-panel mode="scroll" drawer cross-fade>
+        <core-toolbar id="navheader" class="tall">
+          <!-- <core-image src="{{user.cover}}" sizing="cover" preload fade
+                      style="width:400px; height:400px; background-color:#c41411;">
+          </core-image> -->
+
+        </core-toolbar>
+
+        <core-selector selected="{{selectedPage}}" selectedAttribute="">
+          <paper-item>
+            <core-icon icon="inbox"></core-icon>
+            Latest Products
+          </paper-item>
+          <paper-item>
+            <core-icon icon="inbox"></core-icon>
+            Regions
+          </paper-item>
+        </core-selector>
+
+      </core-header-panel>
+
+      <core-scroll-header-panel id="scrollheader" main condenses keepCondensedHeader cross-fade>
+        <core-toolbar hero-id="mainheader" hero id="mainheader" class="tall {{ {'core-narrow': narrow, 'selected-threads': selectedThreads.length} | tokenList }}">
+
+          <paper-icon-button id="navicon" icon="menu" core-drawer-toggle></paper-icon-button>
+          <div flex></div>
+          <span cross-fade class="bottom indent title">Products</span>
+          <paper-icon-button icon="search" class="fade-on-drawer-open" on-tap="{{toggleSearch}}"></paper-icon-button>
+          <paper-icon-button icon="maps:earth" class="fade-on-drawer-open" on-tap="{{toggleMap}}"></paper-icon-button>
+
+        </core-toolbar>
+
+        <div content cross-fade>
+          <core-selector id="threadlist" multi selectedAttribute="selected"
+                         selected="{{selectedThreads}}">
+            <template repeat="{{product, i in productResult.response.docs}}">
+              <akg-product product="{{product}}"
+                           narrow="{{narrow}}"
+                           on-transitionend="{{onTransitionEnd}}"
+                           touch-action="{{touchAction}}"></akg-product>
+            </template>
+          </core-selector>
+        </div>
+
+      </core-scroll-header-panel>
+
+    </core-drawer-panel>
+
+
+    <core-drawer-panel id="mapDrawerPanel" rightDrawer drawerWidth="350px" cross-fade>
+
+      <core-header-panel main  cross-fade >
+        <core-toolbar id="mapheader" hero-id="mainheader" hero>
+          <paper-icon-button icon="arrow-back" on-tap="{{back}}"></paper-icon-button>
+          <span cross-fade class="indent title">Products</span>
+        </core-toolbar>
+        <div fit cross-fade>
+
+          <template if="{{mapReady}}">
+            <leaflet-map cross-fade id="mymap" zoom="3" fitToMarkers="true" iconDefaultImagePath="bower_components/leaflet/dist/images">
+              <template repeat="{{product in productResult.response.docs}}">
+                <template if="{{product.store}}">
+                  <leaflet-marker latitude="{{product.store | geoLat}}" longitude="{{product.store | geoLon}}">
+                    <b><a href="#">{{product.name}}</a></b>
+                    <p>{{product.manu}}</p>
+                  </leaflet-marker>
+                </template>
+              </template>
+            </leaflet-map>
+          </template>
+
+        </div>
+      </core-header-panel>
+
+      <core-header-panel drawer cross-fade>
+        <core-toolbar id="mapNavheader"></core-toolbar>
+        <div fit cross-fade>
+          <core-selector id="threadlist2" selectedAttribute="selected"
+                         >
+            <template repeat="{{product, i in productResult.response.docs}}">
+              <akg-product product="{{product}}"
+                           narrow="{{narrow}}"
+                           format="maplist"></akg-product>
+            </template>
+          </core-selector>
+        </div>
+
+      </core-header-panel>
+
+
+    </core-drawer-panel>
+
+  </core-animated-pages>
+
+</template>
+
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>
