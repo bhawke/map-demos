@@ -72,6 +72,10 @@ cd demo-12
 bower install
 cd ..
 
+cd demo-13
+bower install
+cd ..
+
 # send it all to github
 git add -A .
 git commit -am 'seed gh-pages'
