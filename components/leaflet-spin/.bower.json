@@ -1,0 +1,13 @@
+{
+  "name": "leaflet-spin",
+  "homepage": "https://github.com/makinacorpus/Leaflet.Spin",
+  "_release": "494c0596be",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "494c0596be353b83b35de07971680e2d2f441bca"
+  },
+  "_source": "git://github.com/makinacorpus/Leaflet.Spin.git",
+  "_target": "*",
+  "_originalSource": "makinacorpus/Leaflet.Spin"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "leaflet-groupedlayercontrol",
+  "homepage": "https://github.com/ismyrnow/Leaflet.groupedlayercontrol",
+  "_release": "44c3029cf5",
+  "_resolution": {
+    "type": "branch",
+    "branch": "gh-pages",
+    "commit": "44c3029cf5697b7e0da847389caf19a2baeca121"
+  },
+  "_source": "git://github.com/ismyrnow/Leaflet.groupedlayercontrol.git",
+  "_target": "gh-pages",
+  "_originalSource": "ismyrnow/Leaflet.groupedlayercontrol"
+}

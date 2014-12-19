@@ -1,0 +1,31 @@
+{
+  "name": "demo-13",
+  "version": "0.0.0",
+  "authors": [
+    "Rob Beers <rbeers@blackhawkenterprise.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "#master",
+    "jquery": "~1.11.1",
+    "modernizr": "~2.8.3",
+    "leaflet-omnivore": "~0.3.0",
+    "leaflet-styledlayercontrol": "davicustodio/Leaflet.StyledLayerControl",
+    "leaflet-groupedlayercontrol": "ismyrnow/Leaflet.groupedlayercontrol#gh-pages",
+    "Leaflet.awesome-markers": "~2.0.2",
+    "bootstrap": "~3.3.1",
+    "font-awesome": "~4.2.0",
+    "leaflet-spin": "makinacorpus/Leaflet.Spin",
+    "spin.js": "~2.0.1",
+    "leaflet.markercluster": "Leaflet/Leaflet.markercluster#leaflet-master",
+    "esri-leaflet": "Esri/esri-leaflet#leaflet-1.0"
+  }
+}

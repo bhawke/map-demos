@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="components/leaflet/dist/leaflet.css"/>
-    <link rel="stylesheet" href="components/leaflet-groupedlayercontrol/src/leaflet.groupedlayercontrol.css" />
+    <link rel="stylesheet" href="../components/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="../components/leaflet-groupedlayercontrol/src/leaflet.groupedlayercontrol.css" />
     <link rel="stylesheet" href="app.css"/>
 
 </head>
@@ -15,27 +15,27 @@
 
     <div id="map"></div>
 
-<script src="components/jquery/dist/jquery.min.js"></script>
-<script src="components/leaflet/dist/leaflet.js"></script>
-<script>
-    /* polyfill ie8 support - still not working */
-    if (!Array.prototype.indexOf) {
-        Array.prototype.indexOf = function (elt) {
-            var len = this.length >>> 0;
-            var from = Number(arguments[1]) || 0;
-            from = (from < 0) ? Math.ceil(from) : Math.floor(from);
-            if (from < 0) from += len;
+    <script src="../components/jquery/dist/jquery.min.js"></script>
+    <script src="../components/leaflet/dist/leaflet.js"></script>
+    <script>
+        /* polyfill ie8 support - still not working */
+        if (!Array.prototype.indexOf) {
+            Array.prototype.indexOf = function (elt) {
+                var len = this.length >>> 0;
+                var from = Number(arguments[1]) || 0;
+                from = (from < 0) ? Math.ceil(from) : Math.floor(from);
+                if (from < 0) from += len;
 
-            for (; from < len; from++) {
-                if (from in this && this[from] === elt) return from;
-            }
-            return -1;
-        };
-    }
+                for (; from < len; from++) {
+                    if (from in this && this[from] === elt) return from;
+                }
+                return -1;
+            };
+        }
 
-</script>
-<script src="components/leaflet-groupedlayercontrol/src/leaflet.groupedlayercontrol.js"></script>
-<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.3/esri-leaflet.js"></script>
-<script src="app.js"></script>
+    </script>
+    <script src="../components/leaflet-groupedlayercontrol/src/leaflet.groupedlayercontrol.js"></script>
+    <script src="../components/esri-leaflet/dist/esri-leaflet.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

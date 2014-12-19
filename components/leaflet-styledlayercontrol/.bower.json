@@ -1,0 +1,13 @@
+{
+  "name": "leaflet-styledlayercontrol",
+  "homepage": "https://github.com/davicustodio/Leaflet.StyledLayerControl",
+  "_release": "39d09d8109",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "39d09d8109bdeaa16bd45d92e0410072343f2b4f"
+  },
+  "_source": "git://github.com/davicustodio/Leaflet.StyledLayerControl.git",
+  "_target": "*",
+  "_originalSource": "davicustodio/Leaflet.StyledLayerControl"
+}

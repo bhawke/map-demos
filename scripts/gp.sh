@@ -24,57 +24,6 @@ rm README.md
 rm -rf scripts
 
 # run bower install
-cd demo-01
-bower install
-cd ..
-
-cd demo-02
-bower install
-cd ..
-
-cd demo-03
-bower install
-cd ..
-
-cd demo-04
-bower install
-cd ..
-
-cd demo-05
-bower install
-cd ..
-
-cd demo-06
-bower install
-cd ..
-
-cd demo-07
-bower install
-cd ..
-
-cd demo-08
-bower install
-cd ..
-
-cd demo-09
-bower install
-cd ..
-
-cd demo-10
-bower install
-cd ..
-
-cd demo-11
-bower install
-cd ..
-
-cd demo-12
-bower install
-cd ..
-
-cd demo-13
-bower install
-cd ..
 
 # send it all to github
 git add -A .
