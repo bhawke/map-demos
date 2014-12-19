@@ -1,0 +1,13 @@
+{
+  "name": "leaflet",
+  "homepage": "https://github.com/Leaflet/Leaflet",
+  "_release": "f02767308d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f02767308dab60ed4117678cac3e042940b97a37"
+  },
+  "_source": "git://github.com/Leaflet/Leaflet.git",
+  "_target": "master",
+  "_originalSource": "leaflet"
+}

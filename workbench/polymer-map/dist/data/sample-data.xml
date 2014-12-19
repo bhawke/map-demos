@@ -1,0 +1,46 @@
+<add>
+  <doc>
+    <field name="id">1</field>
+    <field name="title">(U) Iraq to Overhaul Baghdad Security to Stop Bombings</field>
+    <field name="summary">Baghdad's neighborhood of Gorayaat, a small Shiite enclave on a bend in the Tigris River, exemplifies the failures of Iraq's security agencies ...</field>
+    <field name="country">Iraq</field>
+    <field name="type">assessment</field>
+    <field name="author">Jane Doe</field>
+    <field name="publication_date">2014-02-13T15:26:37Z</field>
+    <field name="geo">33.311686,44.355905</field>
+  </doc>
+
+  <doc>
+    <field name="id">2</field>
+    <field name="title">(U) Kurds Control Iraq Internet Due to Baghdad Bureaucracy</field>
+    <field name="summary">Iraq's reliance on Kurdistan for Internet connectivity due to Baghdad bureaucracy has put the northern autonomous region in control ...</field>
+    <field name="country">Iraq</field>
+    <field name="type">assessment</field>
+    <field name="author">John Doe</field>
+    <field name="publication_date">2014-03-13T15:26:37Z</field>
+    <field name="geo">36.3528982,43.1406498</field>
+  </doc>
+
+  <doc>
+    <field name="id">3</field>
+    <field name="title">(U) Fight on ISIS in Syria border town enters "new phase"</field>
+    <field name="summary">Blocks of low-rise buildings with hollow facades, shattered concrete, streets strewn with rubble and overturned, crumpled ...</field>
+    <field name="country">Syria</field>
+    <field name="type">assessment</field>
+    <field name="author">Mike Smith</field>
+    <field name="publication_date">2014-04-13T15:26:37Z</field>
+    <field name="geo">34.8149145,39.0464523</field>
+  </doc>
+
+  <doc>
+    <field name="id">4</field>
+    <field name="title">(U) North Korea's 'princess' moves closer to center of power</field>
+    <field name="summary">Kim Yo Jong's title supports earlier reports from a North Korean defector group which said she may have taken a high-level role when Kim Jong  ...</field>
+    <field name="country">North Korea</field>
+    <field name="type">research paper</field>
+    <field name="author">Joe Davis</field>
+    <field name="publication_date">2014-05-13T15:26:37Z</field>
+    <field name="geo">40.3424611,127.4310054</field>
+  </doc>
+</add>
+

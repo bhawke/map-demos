@@ -1,0 +1,13 @@
+{
+  "name": "polymer-map",
+  "version": "0.0.0",
+  "dependencies": {
+    "core-elements": "Polymer/core-elements#^0.5.2",
+    "paper-elements": "Polymer/paper-elements#^0.5.2",
+    "polymer": "Polymer/polymer#^0.5.2",
+    "leaflet-map": "BlackhawkWebComponents/leaflet-map"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  }
+}
